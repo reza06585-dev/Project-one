@@ -1,29 +1,13 @@
 using System;
+using System.Text;
+using System.Threading.Tasks;
 
-class Program
+namespace tamrin7_daneshgah
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Letter I:");
-        Console.WriteLine("***");
-        Console.WriteLine("  *  ");
-        Console.WriteLine("  *  ");
-        Console.WriteLine("  *  ");
-        Console.WriteLine("***");
-
-        Console.WriteLine("\nLetter H:");
-        Console.WriteLine("*   *");
-        Console.WriteLine("*   *");
-        Console.WriteLine("***");
-        Console.WriteLine("*   *");
-        Console.WriteLine("*   *");
-
-        Console.WriteLine("\nLetter E:");
-        Console.WriteLine("***");
-        Console.WriteLine("*    ");
-        Console.WriteLine("***");
-        Console.WriteLine("*    ");
-        Console.WriteLine("***");
-
-        Console.ReadKey();
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, world!");
+        }
     }

@@ -1,26 +1,32 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace reza_alikhanbeigi_Circle
+class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
+        List<int> n = new List<int>();
+        Console.WriteLine("enter 5 numbers");
+
+        for (int a = 1; a <= 5; a++)
         {
-            Double a, mohit, masahat;
+            Console.Write($"enter number {a}: ");
+            int b = int.Parse(Console.ReadLine());
 
-            Console.Write("Enter a number for radius: ");
-            a = Double.Parse(Console.ReadLine()); 
-
-            mohit = 2 * 3.14 * a; 
-            masahat = 3.14 * a * a;
-
-            Console.WriteLine("Masahat is {0} and Mohit is {1}", masahat, mohit);
-
-            Console.ReadKey();
+            if (b == 2)
+            {
+                n.Add(b);             }
         }
-    }
-}
+
+        if (n.Count == 0)
+        {
+            Console.WriteLine("No number = 2");
+        }
+        else
+        {
+            Console.WriteLine(n.Count + " numbers = 2");
+            for (int i = 0; i < n.Count; i++)
+            {
+                Console.WriteLine($"number: {n[i]}");
+            }
+        }

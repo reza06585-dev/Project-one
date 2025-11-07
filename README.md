@@ -2,38 +2,27 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.Write("Enter the day number (1 to 7): ");
-        int day = Convert.ToInt32(Console.ReadLine());
+        int evenCount = 0; // شمارنده اعداد زوج
+        int oddCount = 0;  // شمارنده اعداد فرد
 
-        switch (day)
+        Console.WriteLine("لطفاً 10 عدد وارد کنید:");
+
+        for (int i = 1; i <= 10; i++)
         {
-            case 1:
-                Console.WriteLine("Sunday");
-                break;
-            case 2:
-                Console.WriteLine("Monday");
-                break;
-            case 3:
-                Console.WriteLine("Tuesday");
-                break;
-            case 4:
-                Console.WriteLine("Wednesday");
-                break;
-            case 5:
-                Console.WriteLine("Thursday");
-                break;
-            case 6:
-                Console.WriteLine("Friday");
-                break;
-            case 7:
-                Console.WriteLine("Saturday");
-                break;
-            default:
-                Console.WriteLine("Invalid number! Please enter a value between 1 and 7.");
-                break;
+            Console.Write($"عدد {i}: ");
+            int number = int.Parse(Console.ReadLine());
+
+            if (number % 2 == 0)
+                evenCount++;
+            else
+                oddCount++;
         }
 
-        Console.ReadKey();
+        Console.WriteLine();
+        Console.WriteLine($"تعداد اعداد زوج: {evenCount}");
+        Console.WriteLine($"تعداد اعداد فرد: {oddCount}");
     }
+
+  

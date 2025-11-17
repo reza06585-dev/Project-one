@@ -1,32 +1,47 @@
 using System;
-using System.Collections.Generic;
 
 class Program
 {
     static void Main()
     {
-        List<int> n = new List<int>();
-        Console.WriteLine("enter 5 numbers");
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-        for (int a = 1; a <= 5; a++)
-        {
-            Console.Write($"enter number {a}: ");
-            int b = int.Parse(Console.ReadLine());
+        Console.WriteLine("محاسبه حاصل‌ضرب دو عدد با استفاده از تابع بازگشتی");
+        Console.WriteLine("-----------------------------------------------");
 
-            if (b == 2)
-            {
-                n.Add(b);             }
-        }
+        int a = ReadInt("عدد اول (a) را وارد کنید: ");
+        int b = ReadInt("عدد دوم (b) را وارد کنید: ");
 
-        if (n.Count == 0)
+        int result = MultiplyRecursive(a, b);
+
+        Console.WriteLine($"حاصل‌ضرب {a} × {b} = {result}");
+    }
+
+    // تابع بازگشتی برای ضرب
+    static int MultiplyRecursive(int a, int b)
+    {
+        // حالت پایه
+        if (b == 0)
+            return 0;
+
+        if (b > 0)
+            return a + MultiplyRecursive(a, b - 1);
+
+        // اگر b منفی باشد
+        return -MultiplyRecursive(a, -b);
+    }
+
+    static int ReadInt(string prompt)
+    {
+        while (true)
         {
-            Console.WriteLine("No number = 2");
+            Console.Write(prompt);
+            string? input = Console.ReadLine();
+
+            if (int.TryParse(input, out int value))
+                return value;
+
+            Console.WriteLine("ورودی نامعتبر است. یک عدد صحیح وارد کنید.");
         }
-        else
-        {
-            Console.WriteLine(n.Count + " numbers = 2");
-            for (int i = 0; i < n.Count; i++)
-            {
-                Console.WriteLine($"number: {n[i]}");
-            }
-        }
+    }
+
